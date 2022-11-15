@@ -1,0 +1,276 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@300&display=swap');
+
+
+@font-face {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+Thai+Looped:wght@300&display=swap');
+}
+
+body {
+    font-family: 'Noto Sans Thai Looped', sans-serif;
+    text-align: -webkit-center;
+    z-index: 20;
+    color: #EFE3D0;
+}
+
+p {
+    margin-top: -10;
+    margin-bottom: 1rem;
+}
+.image-section {
+    border-radius: 5px;
+}
+
+.img-preview {
+    width: 400px;
+    height: 200px;
+    position: relative;
+    border: 5px solid #EFE3D0;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    margin-top: 1em;
+    margin-bottom: 1em;
+    z-index: 20
+}
+
+.img-preview>div {
+    width: 100%;
+    height: 100%;
+    background-size: 400px 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 20
+}
+
+input[type="file"] {
+    display: none;
+    z-index: 20
+}
+
+.upload-label {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #EFE3D0;
+    color: #986D8E;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 60px;
+    z-index: 20
+}
+
+.upload-label:hover {
+    background: #986D8E;
+    color: #EFE3D0;
+    z-index: 20
+}
+
+.btn {
+    padding: 12px 30px;
+    background: #D9CAB3;
+    color: #986D8E;
+    font-size: 1em;
+    transition: all .4s;
+    cursor: pointer;
+    border-radius: 60px;
+    border: none;
+    z-index: 20
+}
+
+.btn:hover {
+    background: #87A8A4;
+    color: #EFE3D0;
+}
+
+.loader {
+    border: 0px solid #424242;
+    border-top: 8px solid #ffffff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    z-index: 20
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*background*/
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: -1
+}
+
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+    background-image: linear-gradient(to top, #986D8E 20%, #87A8A4 80%);
+    z-index: -1
+}
+
+.bgTop {
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.bgMiddle {
+    z-index: -2;
+    opacity: 0.75;
+}
+
+.bgBottom {
+    z-index: -3;
+}
+
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+    transform-origin: center bottom;
+}
+
+.waveTop {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveTop {
+    animation: move-wave 3s;
+    -webkit-animation: move-wave 3s;
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.waveMiddle {
+    background-size: 50% 120px;
+}
+
+.waveAnimation .waveMiddle {
+    animation: move_wave 10s linear infinite;
+}
+
+.waveBottom {
+    background-size: 50% 100px;
+}
+
+.waveAnimation .waveBottom {
+    animation: move_wave 15s linear infinite;
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0px;
+        opacity: 1
+    }
+}
+
+@keyframes animatebottom {
+    from {
+        bottom: -100px;
+        opacity: 0
+    }
+
+    to {
+        bottom: 0;
+        opacity: 1
+    }
+}
+
+#myDiv {
+    display: none;
+    text-align: center;
+}
+
+span.feature {
+    z-index: 20;
+}
+
+#result{
+    font-size: 32px;
+}
+
+/* ตารางแสดง feature */
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.tbl-header {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.tbl-content {
+    height: 51px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+th {
+    padding: 20px 15px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
+    border-bottom: solid 1px rgba(217, 137, 228, 0.404);
+}
+
+.container {
+    max-width: 1300px;
+}

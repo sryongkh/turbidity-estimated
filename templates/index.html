@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2 class="headtext d-flex justify-content-center">ประมาณค่าความขุ่นด้วยภาพ</h2>
+<p class="d-flex justify-content-center">Image Processing</p>
+<div class="column justify-content-center">
+    <form id="upload-file" method="post" enctype="multipart/form-data" action="{{ url_for('predict') }}">
+        <label for="imageUpload" class="upload-label">
+            เลือกภาพ
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg" autocomplete="off" required>
+    </form>
+
+    <div class="image-section float-md-none" style="display:none;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-lg " id="btn-predict">ประมาณค่าความขุ่นด้วยภาพ</button>
+        </div>
+    </div>
+
+    <div class="loader"></div>
+    <div style="display:none;" id="myDiv" class="animate-bottom">
+    </div>
+    <table id="userdata">
+        <thead class="tbl-header">        
+            <th>Max of gray</th>
+            <th>Min of gray</th>
+            <th>Mean of gray</th>
+            <th>Std of gray</th>
+            <th>Mean of luminance</th>
+            <th>Std of luminance</th>
+            <th>Mean of red</th>
+            <th>Std of red</th>
+            <th>Mean of green</th>
+            <th>Std of green</th>
+            <th>Mean of blue</th>
+            <th>Std of blue</th>
+            
+        </thead>
+        <tbody class="tbl-content">
+            
+        </tbody>
+    </table>
+    <div class="text-center" id="result"></div>
+    
+</div>
+
+{% endblock %}
